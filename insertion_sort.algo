@@ -1,0 +1,24 @@
+// sous procedure pour permuter deux nombres
+PROCEDURE permute(a : INTEGER, b : INTEGER)
+VAR
+    c : INTEGER;
+BEGIN
+    c := b ;
+    b := a ;
+    a := c ;
+END
+
+// l'algorithme insertion sort
+ALGORITHM _insertion_sort
+VAR
+    arr : ARRAY_OF INTEGER[];
+    i,j : INTEGER;
+BEGIN
+    FOR i FROM 0 TO arr.length - 1 DO
+        FOR j FROM 0 TO i - 1 DO
+            IF (arr[j] > arr[i]) THEN
+                permute(arr[j],arr[i]);
+            END_IF
+        END_FOR
+    END_FOR
+END
